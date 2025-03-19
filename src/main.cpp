@@ -13,13 +13,6 @@ int main()
 
         uint32_t result = fibonacci(n);
 
-        if (result == 1)
-        {
-            printf("Works \n");
-        }
-        else
-        {
-            printf("Failed \n");
-        }
+        printf("Fibonacci(%ld) = %ld \n", n, result);
     }
 }

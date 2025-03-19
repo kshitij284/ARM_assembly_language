@@ -1,18 +1,17 @@
 #include <mbed.h>
 
 extern "C" uint32_t fibonacci(uint32_t n);
+extern "C" uint32_t factorial(uint32_t n);
 
 int main()
 {
-    uint32_t n = 10;
+    uint32_t n = 39;
     while (1)
     {
         printf("The input to the function is %ld \n", n);
 
-        // Sanity check, passing 10 to the function to check if the assembly function receive the input currectly
+        uint32_t result = factorial(n);
 
-        uint32_t result = fibonacci(n);
-
-        printf("Fibonacci(%ld) = %ld \n", n, result);
+        printf("factorial(%ld) = %ld \n", n, result);
     }
 }

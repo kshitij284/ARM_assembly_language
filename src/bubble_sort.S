@@ -20,16 +20,16 @@ inner_loop:
     cmp r1, r2            @ compare the two values
     ble dont_swap          @ if r1<= r2, branch to dont_swap
 
-    @ if above condition is false i.e r9 > r10, swap the values
-    str r10, [r8]          @ store the value of r10 at current address i.e array[i]
-    str r9, [r8, #4]       @ store the value of r9 at next address i.e array[i+1]
+    @ if above condition is false i.e r2 > r3, swap the values
+    str r2, [r3]          @ store the value of r3 at current address i.e array[i]
+    str r1, [r3, #4]       @ store the value of 2 at next address i.e array[i+1]
 
 dont_swap:
-    add r8, r8, #4         @ increment the address for next value in the array
-    subs r7, r7, #1        @ decrement the inner loop counter
+    add r3, r3, #4         @ increment the address for next value in the array
+    sub r7, r7, #1        @ decrement the inner loop counter
     bgt inner_loop         @ if inner loop counter > 0, continue the loop
 
-    subs r6, r6, #1        @ decrement the outer loop counter
+    sub r6, r6, #1        @ decrement the outer loop counter
     b outer_loop           @ if outer loop counter > 0, continue the loop
 
 end:

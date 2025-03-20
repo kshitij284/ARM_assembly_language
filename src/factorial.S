@@ -35,7 +35,7 @@ loop:
     
 cleanup_loop:
     add sp, sp, #4          @ Move stack pointer (one word at a time)
-    subs r6, r6, #1         @ Decrement counter and set flags
+    sub r6, r6, #1         @ Decrement counter and set flags
     bne cleanup_loop        @ Continue until all items are popped
     
     pop {r4, r5, r6, pc}    @ Restore registers and return
